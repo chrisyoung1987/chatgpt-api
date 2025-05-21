@@ -25,3 +25,18 @@ docker run -p 8000:8000 --env-file .env chatgpt-api
 
 ## .env ファイル例（アップロード禁止）
 OPENAI_API_KEY=your_api_key_here
+
+## セットアップ手順（ローカル）
+
+1. このリポジトリを clone
+2. `.env.example` を `.env` にリネームして、自分の OpenAI API キーを入力
+3. Docker が使える場合：
+   docker build -t chatgpt-api .
+   docker run -p 8000:8000 --env-file .env chatgpt-api
+4. ブラウザで `http://localhost:8000/docs` にアクセス
+   ## AWS EC2 にデプロイするには
+  - Ubuntu EC2 を作成（ポート8000を開ける）
+  - `git clone` してこのリポジトリをダウンロード
+  - Dockerインストール
+  - 上記の Docker 実行手順を実行
+
